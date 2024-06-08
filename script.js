@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const numbersCheck = document.querySelector("#numbers");
     const symbolsCheck = document.querySelector("#symbols");
     const indicator = document.querySelector("[data-indicator]");
+    const strengthDisplay = document.querySelector("[data-strengthDisplay]");
     const generateBtn = document.querySelector(".generate-button");
     const allCheckBox = document.querySelectorAll("input[type=checkbox]");
     const symbols = '~`!@#$%^&*()_-+={[}]|:;"<,>.?/';
@@ -58,13 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
         let hasNum = numbersCheck.checked;
         let hasSym = symbolsCheck.checked;
 
+        let strength = "";
+        let color = "";
+
         if (hasUpper && hasLower && (hasNum || hasSym) && passwordLength >= 8) {
-            setIndicator("#0f0");
+            strength = "Strong";
+            color = "#0f0";
         } else if ((hasLower || hasUpper) && (hasNum || hasSym) && passwordLength >= 6) {
-            setIndicator("#ff0");
+            strength = "Medium";
+            color = "#ff0";
         } else {
-            setIndicator("#f00");
+            strength = "Weak";
+            color = "#f00";
         }
+
+        strengthDisplay.innerText = strength;
+        setIndicator(color);
     }
 
     async function copyContent() {
