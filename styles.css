@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    color: blanchedalmond;
+}[data-copiedMsg] {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+[data-copiedMsg].active {
+    display: block;
+    opacity: 1;
+}
+
