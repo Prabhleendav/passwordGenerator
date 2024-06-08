@@ -10,4 +10,22 @@ body{
     display: block;
     opacity: 1;
 }
+[strength-container] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[data-indicator] {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f00; /* Default color */
+    transition: background-color 0.3s ease;
+}
+
+[data-strengthDisplay] {
+    font-weight: bold;
+    margin-left: 10px;
+}
 
